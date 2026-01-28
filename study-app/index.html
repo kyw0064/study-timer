@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>공부 타이머</title>
+
+  <!-- CSS 연결 -->
+  <link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+  <button class="toggle" onclick="toggleMode()">🌙</button>
+
+  <div class="container">
+    <div id="todayTime">오늘 공부: 00:00:00</div>
+
+    <div class="circle" id="timer">00:00:00</div>
+
+    <div>
+      <button class="start" onclick="start()">시작</button>
+      <button class="stop" onclick="stop()">정지</button>
+    </div>
+  </div>
+
+  <!-- JS 연결 (중요: body 맨 아래) -->
+  <script src="script.js"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("sw.js");
+  }
+</script>
+</body>
+</html>
